@@ -32,7 +32,7 @@ It was downloaded October 18th so may have changed slightly since then!
 In order to ask a question, run a command like:
 
 ```shell
-python qa.py "What is the work from home policy"
+python3 qa.py "What is the work from home policy"
 ```
 
 You can switch out `What is the work from home policy` for any question of your liking!
