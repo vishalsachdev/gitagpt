@@ -48,7 +48,7 @@ output=""
 if user_input:
     # Call the chain function with the user input as the question
     result = chain({"question": user_input})
-    while is not (result) :
+    while not (result):
         st.spinner('Getting a response from the bot...')     
     
     # Format the answer and sources into a string
