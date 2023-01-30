@@ -21,6 +21,7 @@ chain = VectorDBQAWithSourcesChain.from_llm(llm=OpenAI(temperature=0), vectorsto
 st.set_page_config(page_title="Bhagvad Geeta Question Answer Bot", page_icon=":robot:")
 # Add a header to the Streamlit UI with the title "Bhagvad Geeta Question Answer Bot"
 st.header("Bhagvad Geeta Question Answer Bot")
+st.header("An AI bot trained on https://ocoy.org/read-our-books/introduction-gita-for-awakening/ ")
 
 # Check if "generated" is in the Streamlit session state
 if "generated" not in st.session_state:
