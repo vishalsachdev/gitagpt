@@ -45,6 +45,7 @@ The code to run the StreamLit app is in `main.py`.
 Note that when setting up your StreamLit app you should make sure to add `OPENAI_API_KEY` as a secret environment variable.
 
 ## 🧑 Instructions for ingesting your own dataset. Use the python script below to convert the PDF to text offline 
+'''
 import PyPDF2
 
 # Open the PDF file
@@ -65,7 +66,7 @@ text_file = open('enterfilename.txt', 'w')
 text_file.write(text)
 text_file.close()
 
-
+'''
 
 Run the following command to ingest the data.
 
