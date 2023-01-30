@@ -50,9 +50,9 @@ if user_input:
     output = f"Answer: {result['answer']}\nSources: {result['sources']}"
 
     # Append the user input to the "past" list in the session state
-    st.session_state.past.append(user_input)
+ #   st.session_state.past.append(user_input)
     # Append the formatted answer and sources to the "generated" list in the session state
-    st.session_state.generated.append(output)
+ #   st.session_state.generated.append(output)
 
 # Check if the "generated" list in the session state is not empty
 #if st.session_state["generated"]:
