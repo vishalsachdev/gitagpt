@@ -47,9 +47,10 @@ output=""
 # Check if the user input is not None
 if user_input:
     # Call the chain function with the user input as the question
-    result = chain({"question": user_input})
     while not (result):
-        st.spinner('Getting a response from the bot...')     
+        st.spinner('Getting a response from the bot...')  
+    result = chain({"question": user_input})
+       
     
     # Format the answer and sources into a string
     output = f"Answer: {result['answer']}"
