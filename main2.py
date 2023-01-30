@@ -47,8 +47,6 @@ output=""
 # Check if the user input is not None
 if user_input:
     # Call the chain function with the user input as the question
-    while not (result):
-        st.spinner('Getting a response from the bot...')  
     result = chain({"question": user_input})
        
     
