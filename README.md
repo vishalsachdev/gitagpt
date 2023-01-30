@@ -1,6 +1,6 @@
-# Notion Question-Answering
 
-🤖Ask questions to your Notion database in natural language🤖
+# Adapted from notion-Qa to answer questions from a text file created from a PDF of the Gita . Deployed on Streamlit with code on main.py 
+
 
 💪 Built with [LangChain](https://github.com/hwchase17/langchain)
 
@@ -25,8 +25,7 @@ export OPENAI_API_KEY=....
 - Instructions for ingesting your own dataset
 
 ## 📊 Example Data
-This repo uses the [Blendle Employee Handbook](https://www.notion.so/Blendle-s-Employee-Handbook-7692ffe24f07450785f093b94bbe1a09) as an example.
-It was downloaded October 18th so may have changed slightly since then!
+This repo uses the PDF at https://ocoy.org/wp-content/uploads/Bhagavad-Gita-For-Awakeninging-full-2-2021.pdf 
 
 ## 💬 Ask a question
 In order to ask a question, run a command like:
@@ -45,23 +44,28 @@ IMO, this is a more natural and convenient interface for getting information.
 The code to run the StreamLit app is in `main.py`. 
 Note that when setting up your StreamLit app you should make sure to add `OPENAI_API_KEY` as a secret environment variable.
 
-## 🧑 Instructions for ingesting your own dataset
+## 🧑 Instructions for ingesting your own dataset. Use the python script below to convert the PDF to text offline 
+import PyPDF2
 
-Export your dataset from Notion. You can do this by clicking on the three dots in the upper right hand corner and then clicking `Export`.
+# Open the PDF file
+pdf_file = open('enterfilename.pdf', 'rb')
+pdf_reader = PyPDF2.PdfReader(pdf_file)
 
-<img src="export_notion.png" alt="export" width="200"/>
+# Loop through each page
+text = ''
+for page in range(len(pdf_reader.pages)):
+    text += pdf_reader.pages[page].extract_text()
 
-When exporting, make sure to select the `Markdown & CSV` format option.
 
-<img src="export_format.png" alt="export-format" width="200"/>
+# Close the PDF file
+pdf_file.close()
 
-This will produce a `.zip` file in your Downloads folder. Move the `.zip` file into this repository.
+# Write the text to a file
+text_file = open('enterfilename.txt', 'w')
+text_file.write(text)
+text_file.close()
 
-Run the following command to unzip the zip file (replace the `Export...` with your own file name as needed).
 
-```shell
-unzip Export-d3adfe0f-3131-4bf3-8987-a52017fc1bae.zip -d Notion_DB
-```
 
 Run the following command to ingest the data.
 
