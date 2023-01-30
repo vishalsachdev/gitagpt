@@ -65,11 +65,11 @@ if user_input:
 
 
 if 'count' not in st.session_state or st.session_state.count == 6:
- st.session_state.count = 0 
- st.session_state.chat_history_ids = None
- st.session_state.old_response = ''
+    st.session_state.count = 0 
+    st.session_state.chat_history_ids = None
+    st.session_state.old_response = ''
 else:
- st.session_state.count += 1
+    st.session_state.count += 1
 
  st.write(f”Chatbot: {output}”)
  st.session_state.old_response = output
