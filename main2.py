@@ -68,12 +68,12 @@ if user_input:
   #      message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
 
 
-if 'count' not in st.session_state or st.session_state.count == 6:
-    st.session_state.count = 0 
-    st.session_state.chat_history_ids = None
-    st.session_state.old_response = ''
-else:
-    st.session_state.count += 1
+#if 'count' not in st.session_state or st.session_state.count == 6:
+#    st.session_state.count = 0 
+#    st.session_state.chat_history_ids = None
+#    st.session_state.old_response = ''
+#else:
+#    st.session_state.count += 1
 
 st.write({output})
-st.session_state.old_response = output
+#st.session_state.old_response = output
