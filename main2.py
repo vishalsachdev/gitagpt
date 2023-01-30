@@ -41,7 +41,7 @@ def get_text():
 
 # Call the function to get the user input
 user_input = get_text()
-
+output=""
 # Check if the user input is not None
 if user_input:
     # Call the chain function with the user input as the question
