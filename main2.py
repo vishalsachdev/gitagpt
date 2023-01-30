@@ -71,5 +71,5 @@ if 'count' not in st.session_state or st.session_state.count == 6:
 else:
     st.session_state.count += 1
 
-st.write(f”Chatbot: {output}”)
+st.write(f"Chatbot: {output}")
 st.session_state.old_response = output
