@@ -47,7 +47,7 @@ if user_input:
     # Call the chain function with the user input as the question
     result = chain({"question": user_input})
     # Format the answer and sources into a string
-    output = f"Answer: {result['answer']}\nSources: {result['sources']}"
+    output = f"Answer: {result['answer']}"
 
     # Append the user input to the "past" list in the session state
  #   st.session_state.past.append(user_input)
