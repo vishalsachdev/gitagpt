@@ -1,5 +1,6 @@
 """Python file to serve as the frontend"""
 import streamlit as st
+import time 
 from streamlit_chat import message
 import faiss
 from langchain import OpenAI
@@ -36,7 +37,7 @@ if "past" not in st.session_state:
 # Define a function to get the user input text
 def get_text():
     # Add a text input field to the Streamlit UI with label "You:"
-    input_text = st.text_input("You: ", "", key="input")
+    input_text = st.text_input("Describe your situation or ask a question: ", "", key="input")
     # Return the user input text
     return input_text
 
@@ -46,6 +47,9 @@ output=""
 # Check if the user input is not None
 if user_input:
     # Call the chain function with the user input as the question
+    with st.spinner('Wait for it...'):
+    time.sleep(5)
+    st.success('Done!')
     result = chain({"question": user_input})
     # Format the answer and sources into a string
     output = f"Answer: {result['answer']}"
